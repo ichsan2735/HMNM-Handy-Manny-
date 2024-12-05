@@ -1,27 +1,83 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="cmyk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Form</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f6f8fc 0%, #e9ecef 100%);
+        }
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            transform: translateY(-2px);
+        }
+        .avatar img {
+            transition: transform 0.3s ease;
+        }
+        .avatar:hover img {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-<body class="min-h-screen bg-base-200 p-8">
+<body class="min-h-screen p-8">
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-lg rounded-box mb-8">
+        <div class="navbar-start">
+            <div class="drawer">
+                <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                <div class="drawer-content">
+                    <label for="my-drawer" class="btn btn-ghost drawer-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </label>
+                </div>
+                <div class="drawer-side z-50">
+                    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                    <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 space-y-2">
+                        <li><a class="hover:bg-primary hover:text-white transition-colors">🏠 Home</a></li>
+                        <li><a class="hover:bg-primary hover:text-white transition-colors">👤 Profile</a></li>
+                        <li><a class="hover:bg-primary hover:text-white transition-colors">ℹ️ About Us</a></li>
+                        <li><a class="hover:bg-primary hover:text-white transition-colors">❓ FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-center">
+            <a class="text-4xl font-extrabold flex items-center tracking-wider group relative" style="font-family: 'Raleway', sans-serif;">
+                <span class="bg-gradient-to-r from-[#A435F0] to-[#8710EE] bg-clip-text text-transparent animate-pulse">H</span>
+                <span class="bg-gradient-to-r from-[#1C1D1F] to-[#2D2F31] bg-clip-text text-transparent group-hover:scale-105 transition-transform">MNM</span>
+                <span class="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-[#A435F0] to-[#8710EE] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </a>
+        </div>
+
+        <div class="navbar-end gap-4">
+            <button class="btn btn-outline btn-primary hover:scale-105 transition-transform">Login</button>
+            <button class="btn btn-primary hover:scale-105 transition-transform">Sign Up</button>
+        </div>
+    </div>
+
     <div class="max-w-md mx-auto bg-base-100 p-8 rounded-box shadow-xl">
         <!-- Profile Picture URL Input -->
         <div class="form-control w-full mb-6">
             <div class="flex flex-col items-center gap-4">
                 <div class="avatar">
-                    <div class="w-24 rounded">
-                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="Profile picture"/>
+                    <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <img src="/api/placeholder/96/96" alt="Profile picture"/>
                     </div>
                 </div>
                 <div class="w-full">
                     <label class="label">
-                        <span class="label-text">Profile Image URL</span>
+                        <span class="label-text font-semibold text-lg">Profile Image URL</span>
                     </label>
-                    <input type="url" placeholder="Enter image URL" class="input input-bordered w-full" />
+                    <input type="url" placeholder="Enter image URL" class="input input-bordered w-full form-input focus:input-primary" />
                 </div>
             </div>
         </div>
@@ -29,25 +85,25 @@
         <!-- Username Input -->
         <div class="form-control w-full mb-4">
             <label class="label">
-                <span class="label-text">Username</span>
+                <span class="label-text font-semibold text-lg">Username</span>
             </label>
-            <input type="text" placeholder="Enter username" class="input input-bordered w-full" />
+            <input type="text" placeholder="Enter username" class="input input-bordered w-full form-input focus:input-primary" />
         </div>
 
         <!-- Full Name Input -->
         <div class="form-control w-full mb-4">
             <label class="label">
-                <span class="label-text">Full Name</span>
+                <span class="label-text font-semibold text-lg">Full Name</span>
             </label>
-            <input type="text" placeholder="Enter full name" class="input input-bordered w-full" />
+            <input type="text" placeholder="Enter full name" class="input input-bordered w-full form-input focus:input-primary" />
         </div>
 
         <!-- Interest Select -->
         <div class="form-control w-full mb-4">
             <label class="label">
-                <span class="label-text">Interest</span>
+                <span class="label-text font-semibold text-lg">Interest</span>
             </label>
-            <select class="select select-bordered w-full">
+            <select class="select select-bordered w-full form-input focus:select-primary">
                 <option disabled selected>Select an option</option>
                 <option>Carpentry</option>
                 <option>Electrical</option>
@@ -57,7 +113,7 @@
         </div>
 
         <!-- Submit Button -->
-        <button class="btn btn-primary w-full mt-6">Save Profile</button>
+        <button class="btn btn-primary w-full mt-6 hover:scale-105 transition-transform">Save Profile</button>
     </div>
 </body>
 </html>
