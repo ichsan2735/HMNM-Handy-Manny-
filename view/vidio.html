@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-base-200 p-8">
+    <div class="container mx-auto bg-base-100 p-6 rounded-box shadow-xl">
+        <div class="grid grid-cols-3 gap-6">
+            <!-- Video Section -->
+            <div class="col-span-2">
+                <!-- Video Player Placeholder -->
+                <div class="w-full aspect-video bg-base-300 rounded-lg mb-4 flex items-center justify-center">
+                    <span class="text-xl text-base-content opacity-50">Video Player</span>
+                </div>
+                
+                <!-- Procedure Section -->
+                <div class="w-full">
+                    <label class="label">
+                        <span class="label-text font-semibold">Procedure</span>
+                    </label>
+                    <textarea class="textarea textarea-bordered w-full h-24" placeholder="Enter procedure details"></textarea>
+                </div>
+            </div>
+
+            <!-- Details Section -->
+            <div class="col-span-1 space-y-4">
+                <!-- Title -->
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-semibold">Title</span>
+                    </label>
+                    <input type="text" placeholder="Enter title" class="input input-bordered w-full" />
+                </div>
+
+                <!-- Category -->
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-semibold">Category</span>
+                    </label>
+                    <select class="select select-bordered w-full">
+                        <option disabled selected>Select category</option>
+                        <option>Category 1</option>
+                        <option>Category 2</option>
+                        <option>Category 3</option>
+                    </select>
+                </div>
+
+                <!-- Description -->
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-semibold">Description</span>
+                    </label>
+                    <textarea class="textarea textarea-bordered h-32" placeholder="Enter description"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
