@@ -1,94 +1,162 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="cmyk">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
-   <script src="https://cdn.tailwindcss.com"></script>
-   <style>
-       body {
-           min-height: 100vh;
-           background-color: #f4f4f4;
-       }
-   </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMNM - Home Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f6f8fc 0%, #e9ecef 100%);
+        }
+        .card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .service-btn {
+            transition: all 0.3s ease;
+        }
+        .service-btn:hover {
+            transform: scale(1.05);
+        }
+        .search-container {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+    </style>
 </head>
 <body>
-   <div class="navbar bg-base-100">
-       <!-- burger -->
-       <div class="navbar-start">
-           <div class="drawer">
-               <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-               <div class="drawer-content">
-                   <label for="my-drawer" class="btn btn-primary drawer-button">
-                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-                       </svg>
-                   </label>
-               </div>
-               <div class="drawer-side">
-                   <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay" ></label>
-                   <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 ">
-                       <li><a>Home</a></li>
-                       <li><a>Profile</a></li>
-                       <li><a>About Us</a></li>
-                       <li><a>FAQ</a></li>
-                   </ul>
-               </div>
-           </div>
-       </div>
-
-       <div class="navbar-center flex-1 justify-center">
-           <a class="btn btn-ghost text-xl">HMNM</a>
-       </div>
-
-       <div class="navbar-end gap-4">
-           <button class="btn btn-outline">Login</button>
-           <button class="btn btn-outline">Sign Up</button>
-       </div>
-   </div>
-
-   <div class="dropdown dropdown-hover ">
-    <div tabindex="0" role="button" class="btn m-1">Hover</div>
-    <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow ">
-      <li><a>Item 1</a></li>
-      <li><a>Item 2</a></li>
-    </ul>
-  </div>
-
-   <!-- Search and buttons container with margin -->
-    
-   <div class="flex flex-col items-center mt-8 gap-8">
-       <div class="form-control w-full max-w-xs">
-           <input type="text" placeholder="Search" class="input input-bordered w-full" /> 
-       </div>
-
-       <div class="flex gap-4"> 
-           <button class="btn btn-outline">Carpentry</button>
-           <button class="btn btn-outline">Electrical</button>
-           <button class="btn btn-outline">Car Maintenance</button>
-           <button class="btn btn-outline">Plumbing</button>
-       </div>
-
-       <div class="flex gap-4">
-        <div class="card bg-base-100 w-96 shadow-xl">
-            <figure>
-              <img
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">Title</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div class="card-actions justify-end">
-                <p> Rating </p> 
-                <p> View</p>
-              </div>
+    <!-- Previous navbar code remains the same -->
+    <div class="navbar bg-base-100 shadow-lg">
+        <div class="navbar-start">
+            <div class="drawer">
+                <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                <div class="drawer-content">
+                    <label for="my-drawer" class="btn btn-ghost drawer-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </label>
+                </div>
+                <div class="drawer-side z-50">
+                    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                    <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 space-y-2">
+                        <li><a class="hover:bg-primary hover:text-white transition-colors">🏠 Home</a></li>
+                        <li><a class="hover:bg-primary hover:text-white transition-colors">👤 Profile</a></li>
+                        <li><a class="hover:bg-primary hover:text-white transition-colors">ℹ️ About Us</a></li>
+                        <li><a class="hover:bg-primary hover:text-white transition-colors">❓ FAQ</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
+        </div>
 
-       </div>
-   </div>
+        <div class="navbar-center">
+            <a class="text-4xl font-extrabold flex items-center tracking-wider group relative" style="font-family: 'Raleway', sans-serif;">
+                <span class="bg-gradient-to-r from-[#A435F0] to-[#8710EE] bg-clip-text text-transparent animate-pulse">H</span>
+                <span class="bg-gradient-to-r from-[#1C1D1F] to-[#2D2F31] bg-clip-text text-transparent group-hover:scale-105 transition-transform">MNM</span>
+                <span class="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-[#A435F0] to-[#8710EE] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </a>
+        </div>
 
+        <div class="navbar-end gap-4">
+            <button class="btn btn-outline btn-primary hover:scale-105 transition-transform">Login</button>
+            <button class="btn btn-primary hover:scale-105 transition-transform">Sign Up</button>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 mt-12">
+        <div class="flex flex-col items-center gap-12">
+            <div class="search-container w-full max-w-2xl rounded-xl p-6 shadow-lg">
+                <div class="flex gap-4">
+                    <input type="text" placeholder="🔍 Search for services..." class="input input-bordered w-full bg-white/50 focus:ring-2 focus:ring-primary transition-all" />
+                    <button class="btn btn-primary hover:scale-105 transition-transform">Search</button>
+                </div>
+            </div>
+
+            <!-- Rest of the content remains the same -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="service-btn btn btn-outline btn-primary gap-2">
+                    🔨 Carpentry
+                </button>
+                <button class="service-btn btn btn-outline btn-primary gap-2">
+                    ⚡ Electrical
+                </button>
+                <button class="service-btn btn btn-outline btn-primary gap-2">
+                    🚗 Car Maintenance
+                </button>
+                <button class="service-btn btn btn-outline btn-primary gap-2">
+                    🔧 Plumbing
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-base-100 shadow-xl hover:shadow-2xl">
+                    <figure class="px-4 pt-4">
+                        <img src="/api/placeholder/400/300" alt="Service" class="rounded-xl object-cover" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title text-primary">Professional Plumbing</h2>
+                        <p class="text-gray-600">Expert plumbing services for all your needs. Available 24/7 for emergencies.</p>
+                        <div class="card-actions justify-between items-center mt-4">
+                            <div class="rating rating-sm">
+                                <input type="radio" name="rating-1" class="mask mask-star-2 bg-primary" checked />
+                                <input type="radio" name="rating-1" class="mask mask-star-2 bg-primary" checked />
+                                <input type="radio" name="rating-1" class="mask mask-star-2 bg-primary" checked />
+                                <input type="radio" name="rating-1" class="mask mask-star-2 bg-primary" checked />
+                                <input type="radio" name="rating-1" class="mask mask-star-2 bg-primary" />
+                            </div>
+                            <button class="btn btn-primary btn-sm">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-xl hover:shadow-2xl">
+                    <figure class="px-4 pt-4">
+                        <img src="/api/placeholder/400/300" alt="Service" class="rounded-xl object-cover" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title text-primary">Electrical Services</h2>
+                        <p class="text-gray-600">Licensed electricians providing quality electrical installations and repairs.</p>
+                        <div class="card-actions justify-between items-center mt-4">
+                            <div class="rating rating-sm">
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-primary" checked />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-primary" checked />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-primary" checked />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-primary" checked />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-primary" checked />
+                            </div>
+                            <button class="btn btn-primary btn-sm">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-xl hover:shadow-2xl">
+                    <figure class="px-4 pt-4">
+                        <img src="/api/placeholder/400/300" alt="Service" class="rounded-xl object-cover" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title text-primary">Car Maintenance</h2>
+                        <p class="text-gray-600">Professional auto repair and maintenance services for all vehicle types.</p>
+                        <div class="card-actions justify-between items-center mt-4">
+                            <div class="rating rating-sm">
+                                <input type="radio" name="rating-3" class="mask mask-star-2 bg-primary" checked />
+                                <input type="radio" name="rating-3" class="mask mask-star-2 bg-primary" checked />
+                                <input type="radio" name="rating-3" class="mask mask-star-2 bg-primary" checked />
+                                <input type="radio" name="rating-3" class="mask mask-star-2 bg-primary" checked />
+                                <input type="radio" name="rating-3" class="mask mask-star-2 bg-primary" />
+                            </div>
+                            <button class="btn btn-primary btn-sm">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
