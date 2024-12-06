@@ -54,7 +54,6 @@
                     <h1 class="text-xl font-medium" style="margin-left: 10px;"><%= foundCategory.categoryName %></h1>
                 </div>
 
-                <!-- Description -->
                 <div class="form-control">
                     <label class="label">
                         <span class="label-text font-semibold">Description:</span>
@@ -89,12 +88,10 @@
             }
         });
 
-        // Save video progress
         player.on('timeupdate', function(e) {
             localStorage.setItem('videoProgress_<%= foundCourse.id %>', player.currentTime);
         });
 
-        // Load saved progress
         const savedTime = localStorage.getItem('videoProgress_<%= foundCourse.id %>');
         if (savedTime) {
             player.currentTime = parseFloat(savedTime);

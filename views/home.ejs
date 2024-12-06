@@ -9,8 +9,6 @@
 
 <body>
     <%- include('_navbar') %>
-
-   <!-- Search and buttons container with margin -->
     
    <div class="flex flex-col items-center mt-8 gap-8">
     <div class="form-control w-full max-w-xs relative">
@@ -55,11 +53,10 @@
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <% data.forEach(element => { %>
-                <div class="h-full"> <!-- Wrapper div to ensure consistent height -->
+                <div class="h-full">
                     <a href="/video/<%= element.id %>" class="block h-full">
                         <button class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-base-200 w-full h-full flex flex-col">
-                            <div class="aspect-video w-full"> <!-- Fixed aspect ratio container -->
-                                <img src="<%= element.imageUrl %>" alt="Course Image" class="w-full h-full object-cover rounded-t-2xl"/>
+                            <div class="aspect-video w-full">                               <img src="<%= element.imageUrl %>" alt="Course Image" class="w-full h-full object-cover rounded-t-2xl"/>
                             </div>
                             <div class="card-body text-left flex-grow flex flex-col justify-between p-4">
                                 <div>

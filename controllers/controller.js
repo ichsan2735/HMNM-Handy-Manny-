@@ -125,8 +125,7 @@ class Controller {
                 let error = 'invalid username/password'
                 return res.redirect(`/user/login?error=${error}`)
             }
-            // res.send(foundUser)
-
+            
         } catch (error) {
             res.send(error)
         }
