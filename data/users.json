@@ -1,0 +1,32 @@
+[
+    {
+        "username": "ican",
+        "email": "ican@gmail.com",
+        "password": "ican",
+        "role": "admin"
+    },
+    {
+        "username": "aldos",
+        "email": "aldos@gmail.com",
+        "password": "aldos",
+        "role": "user"
+    },
+    {
+        "username": "oky",
+        "email": "oky@gmail.com",
+        "password": "oky",
+        "role": "user"
+    },
+    {
+        "username": "japron",
+        "email": "japron@gmail.com",
+        "password": "japron",
+        "role": "user"
+    },
+    {
+        "username": "diki",
+        "email": "diki@gmail.com",
+        "password": "diki",
+        "role": "user"
+    }
+]

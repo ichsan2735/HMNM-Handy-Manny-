@@ -1,0 +1,32 @@
+[
+    {
+        "fullName": "ican keren",
+        "profilePicture": "https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg",
+        "interest": "carpentry",
+        "UserId": 1
+    },
+    {
+        "fullName": "aldous ml",
+        "profilePicture": "https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg",
+        "interest": "electrical",
+        "UserId": 2
+    },
+    {
+        "fullName": "oky jelly",
+        "profilePicture": "https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg",
+        "interest": "car maintenance",
+        "UserId": 3
+    },
+    {
+        "fullName": "japron sukron",
+        "profilePicture": "https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg",
+        "interest": "plumbing",
+        "UserId": 4
+    },
+    {
+        "fullName": "diki bulin",
+        "profilePicture": "https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg",
+        "interest": "electrical",
+        "UserId": 5
+    }
+]

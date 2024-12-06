@@ -1,0 +1,40 @@
+<div class="navbar bg-base-100">
+    <div class="navbar-start">
+        <div class="drawer drawer z-[999]">
+            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content">
+                <label for="my-drawer" class="btn btn-primary drawer-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h7" />
+                    </svg>
+                </label>
+            </div>
+            <div class="drawer-side">
+                <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 ">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/user/profile/<%= userIdSession %>">Profile</a></li>
+                    <li><a>About Us</a></li>
+                    <li><a>FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar-center flex-1 justify-center">
+        <a href="/" class="btn btn-ghost text-xl">HMNM</a>
+    </div>
+
+    <div class="navbar-end gap-4">
+        <% if (userSession) { %>
+            <a href="/user/admin"><button class="btn btn-info">Admin Page</button></a>
+            <a href="/user/admin/add"><button class="btn btn-info">Add Course</button></a>
+            <a href="/user/logout"><button class="btn btn-error">Logout</button></a> 
+        <% } else {%>
+        <a href="/user/login"><button class="btn btn-outline">Login</button></a>
+        <a href="/user/signup"><button class="btn btn-outline">Sign Up</button></a>
+        <% } %>
+    </div>
+</div>

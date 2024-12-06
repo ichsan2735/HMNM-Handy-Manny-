@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Form</title>
+    <%- include('_script') %>
+</head>
+<body>
+    <%- include('_navbar') %>
+
+    <form action="/user/profile/<%= foundUser.id %>" method="post">
+    <div class="max-w-md mx-auto bg-base-100 p-8 rounded-box shadow-xl">
+        <!-- Profile Picture Upload -->
+        <div class="form-control w-full mb-6">
+            <div class="flex flex-col items-center gap-4">
+                <div class="avatar">
+                    <div class="w-24 rounded">
+                        <img src="<%= foundProfile.profilePicture %>" alt="Profile picture"/>
+                    </div>
+                </div>
+            </div>
+            <label class="label" style="margin-right: 310px;">
+                <span class="label-text">imageUrl</span>
+            </label>
+            <input value="<%= foundProfile.profilePicture %>" name="profilePicture" type="url" class="file-input file-input-bordered w-full" />
+        </div>
+
+        <div class="form-control w-full mb-4">
+            <label class="label">
+                <span class="label-text">Username</span>
+            </label>
+            <input value="<%= foundUser.username %>" name="username" type="text" placeholder="Enter username" class="input input-bordered w-full" />
+        </div>
+
+        <!-- Full Name Input -->
+        <div class="form-control w-full mb-4">
+            <label class="label">
+                <span class="label-text">Full Name</span>
+            </label>
+            <input value="<%= foundProfile.fullName %>" name="fullName" type="text" placeholder="Enter full name" class="input input-bordered w-full" />
+        </div>
+
+        <!-- Interest Select -->
+        <div class="form-control w-full mb-4">
+            <label class="label">
+                <span class="label-text">Interest</span>
+            </label>
+            <select name="interest" class="select select-bordered w-full">
+                <option disabled selected>Select an option</option>
+                <option <%= foundProfile.interest === 'carpentry' ? 'selected' : '' %> value="carpentry">Carpentry</option>
+                <option <%= foundProfile.interest === 'electrical' ? 'selected' : '' %> value="electrical">Electrical</option>
+                <option <%= foundProfile.interest === 'car maintenance' ? 'selected' : '' %> value="car maintenance">Car Maintenance</option>
+                <option <%= foundProfile.interest === 'plumbing' ? 'selected' : '' %> value="plumbing">Plumbing</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-full mt-6">Save Profile</button>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Form</title>
+    <%- include('_script') %>
+</head>
+<body>
+    <%- include('_navbar') %>
+
+    <form action="/user/admin/add" method="post">
+    <div class="max-w-md mx-auto bg-base-100 p-8 rounded-box shadow-xl">
+        <div class="form-control w-full mb-6">
+            <label class="label" style="margin-right: 310px;">
+                <span class="label-text">imageUrl</span>
+            </label>
+            <input name="imageUrl" type="url" class="file-input file-input-bordered w-full" />
+        </div>
+
+
+        <div class="form-control w-full mb-6">
+            <label class="label" style="margin-right: 310px;">
+                <span class="label-text">videoUrl</span>
+            </label>
+            <input name="videoUrl" type="url" class="file-input file-input-bordered w-full" />
+        </div>
+
+        <div class="form-control w-full mb-4">
+            <label class="label">
+                <span class="label-text">course name</span>
+            </label>
+            <input name="courseName" type="text" placeholder="Enter course name" class="input input-bordered w-full" />
+        </div>
+
+        <div class="form-control w-full mb-4">
+            <label class="label">
+                <span class="label-text">description</span>
+            </label>
+            <input name="description" type="text" placeholder="Enter description" class="input input-bordered w-full" />
+        </div>
+
+
+        <div class="form-control w-full mb-4">
+            <label class="label">
+                <span class="label-text">procedure</span>
+            </label>
+            <input name="procedure" type="text" placeholder="Enter procedure" class="input input-bordered w-full" />
+        </div>
+
+
+        <div class="form-control w-full mb-4">
+            <label class="label">
+                <span class="label-text">duration</span>
+            </label>
+            <input name="duration" type="number" placeholder="Enter duration" class="input input-bordered w-full" />
+        </div>
+
+        <div class="form-control w-full mb-4">
+            <label class="label">
+                <span class="label-text">Category</span>
+            </label>
+            <select name="CategoryId" class="select select-bordered w-full">
+                <option disabled selected>Select an option</option>
+                <option value="1">Carpentry</option>
+                <option value="2">Electrical</option>
+                <option value="3">Car Maintenance</option>
+                <option value="4">Plumbing</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full mt-6">Add</button>
+    </div>
+</form>
+</body>
+</html>
