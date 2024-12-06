@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cmyk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Details</title>
+    <%- include('_script') %>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+</head>
+<body>
+    <%- include('_navbar') %>
+    <div class="container mx-auto bg-base-100 p-6 rounded-box shadow-xl">
+        <div class="grid grid-cols-3 gap-6">
+            <div class="col-span-2">
+                <div class="w-full bg-base-300 rounded-lg mb-4">
+                    <div class="video-container">
+                        <div class="plyr__video-embed" id="player">
+                            <iframe
+                                src="https://www.youtube.com/embed/<%= videoId %>?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                                allowfullscreen
+                                allowtransparency
+                                allow="autoplay">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full">
+                    <div class="collapse bg-base-200">
+                        <input type="checkbox" />
+                        <div class="collapse-title text-xl font-medium">Procedure</div>
+                        <div class="collapse-content">
+                            <p style="white-space: pre-line;">
+                                <%= foundCourse.procedure %>
+                            </p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+            <div class="col-span-1 space-y-4">
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-semibold">Title:</span>
+                    </label>
+                    <h1 class="text-xl font-medium" style="margin-left: 10px;"><%= foundCourse.courseName %></h1>
+                </div>
+
+                
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-semibold">Category:</span>
+                    </label>
+                    <h1 class="text-xl font-medium" style="margin-left: 10px;"><%= foundCategory.categoryName %></h1>
+                </div>
+
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-semibold">Description:</span>
+                    </label>
+                    <h1 class="text-small font-medium" style="margin-left: 10px;"><%= foundCourse.description %></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const player = new Plyr('#player', {
+            controls: [
+                'play-large',
+                'play',
+                'progress',
+                'current-time',
+                'duration',
+                'mute',
+                'volume',
+                'settings',
+                'fullscreen'
+            ],
+            settings: ['captions', 'quality', 'speed'],
+            youtube: {
+                noCookie: true,
+                rel: 0,
+                showinfo: 0,
+                iv_load_policy: 3
+            }
+        });
+
+        player.on('timeupdate', function(e) {
+            localStorage.setItem('videoProgress_<%= foundCourse.id %>', player.currentTime);
+        });
+
+        const savedTime = localStorage.getItem('videoProgress_<%= foundCourse.id %>');
+        if (savedTime) {
+            player.currentTime = parseFloat(savedTime);
+        }
+    });
+</script>
+</body>
+</html>
